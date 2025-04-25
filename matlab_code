@@ -1,10 +1,10 @@
 % Waste Classification System using Image Processing in MATLAB
 
 % Load the images
-img1 = imread('Plastic.jpeg'); #add ur image file name
-img2 = imread('paperr.jpeg'); #add ur image file name
-img3 = imread('galsss.jpeg'); #add ur image file name
-img4 = imread('Metal.jpeg'); #add ur image file name
+img1 = imread('Plastic.jpeg'); %add ur image file name
+img2 = imread('paperr.jpeg'); %add ur image file name
+img3 = imread('galsss.jpeg'); %add ur image file name
+img4 = imread('Metal.jpeg'); %add ur image file name
 
 % Convert images to grayscale
 gray_img1 = rgb2gray(img1);
@@ -43,7 +43,7 @@ svm_model = fitcecoc(features, waste_labels, 'OptimizeHyperparameters','auto', .
     'HyperparameterOptimizationOptions', struct('AcquisitionFunctionName', 'expected-improvement-plus'));
 
 % Classify a new image
-new_img = imread('galsss.jpeg');  % Example: new image to classify         #give the image file of ur that is saved in the filepath to check which type of image it is in the output
+new_img = imread('galsss.jpeg');  % Example: new image to classify         %give the image file of ur that is saved in the filepath to check which type of image it is in the output
 new_gray_img = rgb2gray(new_img);
 new_filtered_img = medfilt2(new_gray_img, [3 3]);
 new_mat2gray_img = mat2gray(new_filtered_img);
